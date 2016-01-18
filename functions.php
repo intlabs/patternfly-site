@@ -558,12 +558,14 @@ if( !function_exists("theme_styles") ) {
         wp_register_style( 'patternfly-site', get_template_directory_uri() . '/library/css/patternfly-site.min.css', array(), '1.0', 'all' );
         wp_register_style( 'patternfly-wp', get_stylesheet_uri(), array(), '1.0', 'all' );
         wp_register_style( 'animate-css', get_template_directory_uri() . '/library/components/animate.css/animate.min.css', array(), '1.0', 'all' );
+        wp_register_style( 'gridster', get_template_directory_uri() . '/library/components/gridstack.js/dist/gridstack.min.css', array(), '1.0', 'all' );
 
         wp_enqueue_style( 'patternfly-adjusted' );
         wp_enqueue_style( 'patternfly-additions' );
         wp_enqueue_style( 'patternfly-site' );
         wp_enqueue_style( 'patternfly-wp');
         wp_enqueue_style( 'animate-css');
+        wp_enqueue_style( 'gridster');
     }
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -661,6 +663,11 @@ if( !function_exists( "theme_js" ) ) {
       get_template_directory_uri() . '/library/components/jquery.scrollTo/jquery.scrollTo.min.js',
       array('jquery'),
       '1.4.13' );
+    
+    wp_register_script( 'gridster',
+      get_template_directory_uri() . '/library/components/gridstack.js/dist/gridstack.min.js',
+      array('jquery'),
+      '0.2.4-dev' );
       
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('bootstrap-combobox');
@@ -681,6 +688,7 @@ if( !function_exists( "theme_js" ) ) {
     wp_enqueue_script('pf');
     wp_enqueue_script('wow');
     wp_enqueue_script('scroll-to');
+    wp_enqueue_script('gridster');
   }
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
