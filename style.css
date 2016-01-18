@@ -23,4 +23,14 @@ body.admin-bar .navbar-fixed-top {
   }
 }
 
+/* Cards Tab Selector fix */
+a.card-pf-title:hover, a.card-pf-title:focus {
+    color: #000;
+    text-decoration: none;
+}
+a.card-pf-title {
+    color: #333;
+    text-decoration: none;
+}
+
 /* see less/bootstrap-custom.less */
