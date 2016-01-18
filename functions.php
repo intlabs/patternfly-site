@@ -557,11 +557,13 @@ if( !function_exists("theme_styles") ) {
         wp_register_style( 'patternfly-additions', get_template_directory_uri() . '/library/components/patternfly/dist/css/patternfly-additions.min.css', array(), '1.0', 'all' );
         wp_register_style( 'patternfly-site', get_template_directory_uri() . '/library/css/patternfly-site.min.css', array(), '1.0', 'all' );
         wp_register_style( 'patternfly-wp', get_stylesheet_uri(), array(), '1.0', 'all' );
+        wp_register_style( 'animate-css', get_template_directory_uri() . '/library/components/animate.css/animate.min.css', array(), '1.0', 'all' );
 
         wp_enqueue_style( 'patternfly-adjusted' );
         wp_enqueue_style( 'patternfly-additions' );
         wp_enqueue_style( 'patternfly-site' );
         wp_enqueue_style( 'patternfly-wp');
+        wp_enqueue_style( 'animate-css');
     }
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -650,6 +652,16 @@ if( !function_exists( "theme_js" ) ) {
       array('jquery'),
       '1.2' );
 
+    wp_register_script( 'wow',
+      get_template_directory_uri() . '/library/components/wow/dist/wow.min.js',
+      array('jquery'),
+      '1.0.2' );
+      
+    wp_register_script( 'scroll-to',
+      get_template_directory_uri() . '/library/components/jquery.scrollTo/jquery.scrollTo.min.js',
+      array('jquery'),
+      '1.4.13' );
+      
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('bootstrap-combobox');
     wp_enqueue_script('bootstrap-datepicker');
@@ -667,6 +679,8 @@ if( !function_exists( "theme_js" ) ) {
     wp_enqueue_script('wpbs-scripts');
     // call pf last since it initializes widgets
     wp_enqueue_script('pf');
+    wp_enqueue_script('wow');
+    wp_enqueue_script('scroll-to');
   }
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
