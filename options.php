@@ -34,7 +34,7 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	$themesPath = dirname(__FILE__) . '/admin/themes';
+	$themesPath = dirname(__FILE__) . '/admin';
 	
 	// Insert default option
 	$theList['default'] = OPTIONS_FRAMEWORK_DIRECTORY . '/themes/default-thumbnail-100x60.png';
